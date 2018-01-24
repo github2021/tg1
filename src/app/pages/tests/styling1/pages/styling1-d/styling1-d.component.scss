@@ -1,0 +1,204 @@
+@import '~@angular/material/theming';
+// @import '../../../../../../../node_modules/@angular/material/theming';
+
+// Include material core styles.
+@include mat-core();
+
+// Define the light theme.
+$primary: mat-palette($mat-indigo);
+$accent:  mat-palette($mat-pink, A200, A100, A400);
+
+$theme: mat-light-theme($primary, $accent);
+$sidenav-spacing-unit: 8px;
+$sidenav-width: 240px;
+
+@import './_analsextheme'; @include analsextheme($theme);
+
+.docs-component-viewer-sidenav {
+  box-shadow: 3px 0 6px rgba(0, 0, 0, .24);
+  padding-bottom: 72px;
+  width: $sidenav-width;
+  bottom: 0;
+  overflow: auto;
+  height: 100%;
+
+  &.mat-sidenav-opened {
+    box-shadow: 3px 0 6px rgba(0, 0, 0, .24);
+  } 
+
+  // Section divider
+
+  h3 {
+    border: none;
+    letter-spacing: 1px;
+    line-height: $sidenav-spacing-unit * 3;
+    text-transform: uppercase;
+    font-weight: 400;
+    margin: 0;
+    padding: 0 ($sidenav-spacing-unit * 2);
+    font-size: 10px;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  } 
+
+  // Sidenav navigation item
+  li {
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    margin: 0;
+    padding: 0; 
+
+
+    // Hide the border on the last item
+
+
+    &:last-child {
+      border-color: transparent;
+    }
+
+    >a {
+      box-sizing: border-box;
+      display: block;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: ($sidenav-spacing-unit * 6) - 1;
+      text-decoration: none;
+      transition: all .3s;
+      padding: 0 ($sidenav-spacing-unit * 2);
+      position: relative;
+
+      &.docs-component-viewer-sidenav-item-selected {
+        font-weight: 600;
+      }
+    }
+  }
+
+
+}
+
+.docs-component-sidenav-content {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column; // The rule will match the element following the router-outlet which will be the routed component.
+  router-outlet+* {
+    flex-grow: 1;
+  }
+}
+
+
+@media (max-width: 720px) {
+  .docs-component-viewer-sidenav-container {
+    flex: 1 0 auto;
+  }
+}
+
+
+// .component-page-header {
+//   display: flex;
+//   align-items: center;
+
+//   @media (max-width: $small-breakpoint-width) {
+//     padding-left: 0;
+//   }
+// }
+
+// h1 {
+//   outline: none;
+
+//   @media (max-width: $small-breakpoint-width) {
+//     padding: 24px 8px;
+//     font-size: 20px;
+//   }
+// }
+
+$small-breakpoint-width: 720px;
+
+/* For desktop, the content should be aligned with the page title. */
+$content-padding-side: 70px;
+$content-padding-side-xs: 15px;
+
+
+.sidenav-toggle {
+  padding: 0;
+  margin: 8px;
+  min-width: 64px;
+  display: none;
+  @media (max-width: $small-breakpoint-width) {
+    display: flex;
+    xxxxxxxxxxxalign-items: center;
+    xxxxxxxxxxxxxxxjustify-content: center;
+  }
+
+  mat-icon {
+    font-size: 30px;
+    height: 64px;
+    width: 64px;
+    line-height: 64px;
+    color: white;
+  }
+}
+
+
+.docs-primary-header {
+  background: pink;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// .penis {
+//   flex: 1;
+//   display: flex;
+//   flex-direction: column;
+// }
+
+
+
+
+
+
+
+
+// app-styling1-d {
+//   background: yellow;
+//   display: flex;
+//   flex-direction: column;
+// }
+
+
+

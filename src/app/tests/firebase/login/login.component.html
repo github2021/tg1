@@ -1,0 +1,26 @@
+<h1>{{ (item | async)?.name }}</h1>
+
+
+
+<div *ngIf="afAuth.authState | async as user; else showLogin">
+  <h1>Hello {{ user.displayName }}!</h1>
+  <button (click)="logout()">Logout</button>
+</div>
+<ng-template #showLogin>
+  <p>Please login.</p>
+  <button (click)="login()">Login with Google</button>
+</ng-template>
+
+
+<br><br><hr><br><br>
+
+
+  <form #formData='ngForm' (ngSubmit)="onSubmit(formData)">
+    <input type="text" placeholder="Email" (ngModel)="email" name="email" required class="email">
+    <input type="password" placeholder="Password" (ngModel)="password" name="password" required class="email">
+    <br />
+    <br />
+    <button style="width: 200px;" type="submit" [disabled]="!formData.valid">Login</button>
+    <br />
+  </form>
+  <div style="background: white; color: red;">{{error}}</div>

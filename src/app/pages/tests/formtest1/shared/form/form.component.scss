@@ -1,0 +1,113 @@
+/* You can add global styles to this file, and also import other style files */
+
+body {
+  font: 14px sans-serif;
+}
+
+fieldset {
+  margin: auto;
+  max-width: 500px;
+  padding: 20px
+}
+
+legend {
+  padding: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+label {
+  display: block;
+}
+
+button {
+  margin-bottom: 10px;
+  background: #95BCF2;
+  border: 0;
+  border-radius: 5px;
+  color: black;
+  cursor: pointer;
+  font-size: 1.1em;
+  padding: 10px 15px;
+  transition: background .3s;
+}
+
+
+button:hover {
+  background: #6385b2;
+}
+
+button:disabled {
+  background: #eae8e8;
+  color: #bcbcbc;
+  cursor: default;
+}
+
+button:focus {
+  outline: 0;
+}
+
+select {
+  width: 100%;
+  max-width: 170px;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+select:focus {
+  border: solid 1px #333;
+  transition: all .5s ease-in-out;
+}
+
+input {
+  border: solid 1px #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  font: 400 14px Arial;
+  width: 80%;
+  max-width: 250px;
+  transition: all .3s ease-in-out;
+}
+
+input:focus {
+  outline: 0;
+  border: solid 1px #333;
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  transform: scale(1.05);
+}
+
+
+.form-button-delete-wrapper {
+  text-align: right;
+}
+
+.form-success {
+  background: lightgreen;
+  padding: 14px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 200px;
+  text-align: center
+}
+
+
+.form-error {
+  margin-bottom: 10px;
+  color: red;
+}
+
+.form-control {
+  margin-bottom: 10px;
+}
+
+.form-bottom-buttons-wrapper {
+  width: 100%;
+  max-width: 500px;
+  margin: auto;
+}
+
+.form-bottom-buttons {
+    padding: 20px 25px 20px 15px;
+}
+

@@ -1,0 +1,64 @@
+<!-- <p>
+  D <b><code>ID: {{ id }}</code></b></p>
+<nav>
+  <a [routerLink]="['./child-one']">Child One</a>
+  <a [routerLink]="['./child-two']">Child Two</a>
+</nav>
+<div style="color: red; margin-top: 1rem;">
+  D Router Outlet:
+</div>
+<div style="border: 2px solid red; padding: 1rem;">
+  <router-outlet></router-outlet>
+</div>
+
+ -->
+<mat-sidenav-container style="flex:1">
+  <mat-sidenav #sidenav class="docs-component-viewer-sidenav" [opened]="!isScreenSmall()" [mode]="isScreenSmall() ? 'over' : 'side'" [fixedInViewport]="isScreenSmall()" fixedTopGap="92">
+    <nav>
+      <h3>category.name</h3>
+      <ul>
+        <li><a [routerLink]="['./child-one']" routerLinkActive="docs-component-viewer-sidenav-item-selected">Angular</a></li>
+        <li><a [routerLink]="['./child-two']" routerLinkActive="docs-component-viewer-sidenav-item-selected">ES6</a></li>
+        <li><a [routerLink]="['./child-three']" routerLinkActive="docs-component-viewer-sidenav-item-selected">Libraries</a></li>
+      </ul>
+    </nav>
+    <nav>
+      <h3>category.name</h3>
+      <ul>
+        <li>
+          <a style="color: black;" [routerLink]="['./child-onex']" routerLinkActive="docs-component-viewer-sidenav-item-selected">4</a>
+        </li>
+        <li>
+          <a style="color: black;" [routerLink]="['./child-twox']" routerLinkActive="docs-component-viewer-sidenav-item-selected">5</a>
+        </li>
+        <li>
+          <a style="color: black;" [routerLink]="['./child-threex']" routerLinkActive="docs-component-viewer-sidenav-item-selected">6</a>
+        </li>
+      </ul>
+    </nav>
+  </mat-sidenav>
+  <div class="docs-component-sidenav-content">
+    <!-- <component-page-header (toggleSidenav)="sidenav.toggle()"></component-page-header> -->
+
+
+
+<div class="docs-primary-header component-page-header">
+  <!-- <button mat-button class="sidenav-toggle" (click)="toggleSidenav.emit()"> -->
+  <button mat-button class="sidenav-toggle" (click)="sidenav.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+
+<!--   <h1 focusOnNavigation>{{getTitle()}} </h1>
+ --></div>
+
+
+
+
+<!--     <button (click)="sidenav.toggle()">analsex</button>
+ -->    <router-outlet></router-outlet>
+    <!-- <app-styling1-b></app-styling1-b> -->
+    <!-- <div>xxxxxxxxxxxxxx</div> -->
+  </div>
+</mat-sidenav-container>
+<!-- <div>xxxxxxxxxxx</div>
+ -->

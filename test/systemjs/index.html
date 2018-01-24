@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+</head>
+<script src="system.js"></script>
+<!-- <script src="a.js"></script>
+<script src="b.js"></script>
+ -->
+
+<body>
+  <script type="text/javascript">
+  console.log("A not needed");
+
+  SystemJS.import('a.js').then(
+    function() {
+      var bob = new A();
+      console.log(bob.a);
+    })
+
+  </script>
+</body>
+
+</html>

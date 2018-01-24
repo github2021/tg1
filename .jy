@@ -1,0 +1,9 @@
+ng g c pages/tests/formtest1/pages/add-dsu &&
+ng g c pages/tests/formtest1/pages/add-site &&
+ng g c pages/tests/formtest1/shared/nav &&
+ng g c pages/tests/formtest1/shared/models &&
+ng g c pages/tests/formtest1/shared/guards &&
+ng g c pages/tests/formtest1/shared/form &&
+ng g s pages/tests/formtest1/shared/services/inMemoryDataService
+
+import { InMemoryDbService } from 'angular-in-memory-web-api';

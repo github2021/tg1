@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+</head>
+
+<body>
+</body>
+<script type="text/javascript">
+class Es6Class {
+  constructor() {
+    console.log("es6class this refers to", this)
+    this._this = this;
+    this.name = "bob"
+    this.normalFunction = function() { console.log("normal function this in a class refers to ", this); }
+    this.arrowFunction = () => { console.log("arrow function this in a class refers to", this); }
+  }
+  _function() {
+    console.log("es6class function this refers to", this);
+  };
+}
+
+function the_function() {
+  console.log("function this refers to", this);
+  this._this = this;
+  this.normalFunction = function() { console.log("normal function this in a normal function refers to ", this); }
+  this.arrowFunction = () => { console.log("arrow function this in a normal function refers to", this); }
+}
+
+var es6Function = () => {
+  console.log("es6function this refers to", this)
+}
+
+
+the_object = {
+  normalFunction: function() { console.log("normal function this in a object refers to ", this); },
+  arrowFunction: () => { console.log("arrow function this in a object refers to", this); }
+}
+
+var es6Class = new Es6Class();
+es6Class._function();
+es6Class.normalFunction();
+es6Class.arrowFunction();
+
+var the_function = new the_function();
+the_function.normalFunction()
+the_function.arrowFunction()
+
+es6Function()
+
+the_object.normalFunction();
+the_object.arrowFunction();
+
+</script>
+
+</html>

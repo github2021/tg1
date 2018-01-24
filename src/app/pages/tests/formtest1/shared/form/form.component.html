@@ -1,0 +1,80 @@
+<div *ngFor="let form of formsArray">
+  <fieldset>
+    <legend>{{title}}</legend>
+    <div *ngIf="form._id!=1" class="form-button-delete-wrapper">
+      <button (click)="removeThisForm(form._id)">Delete</button>
+    </div>
+    <form [formGroup]="form" (click)="formTouched()">
+      <div class="form-group">
+        <div class="form-control">
+          <label class="center-block">{{label1}}
+            <br>
+            <input type="text" class="form-control" formControlName="control1">
+          </label>
+          <div class="form-error" *ngIf="form.invalid && (form.controls.control1.touched || form.controls.control1.dirty )">
+            <div *ngIf="form.controls.control1.errors?.required">
+              Required Field
+            </div>
+            <div *ngIf="form.controls.control1.errors?.maxlength">
+              Max Lenght 10
+            </div>
+          </div>
+        </div>
+        <div class="form-control">
+          <label>{{label2}}
+            <br>
+            <input type="text" class="form-control" formControlName="control2">
+          </label>
+          <div class="form-error" *ngIf="form.invalid && (form.controls.control2.touched || form.controls.control2.dirty )">
+            <div *ngIf="form.controls.control2.errors?.required">
+              Required Field
+            </div>
+            <div *ngIf="form.controls.control2.errors?.maxlength">
+              Max Lenght 20
+            </div>
+          </div>
+        </div>
+        <div [ngSwitch]="switchInputs">
+          <div *ngSwitchCase=true>
+            <label> {{label3}}
+              <br>
+              <select class="form-control" formControlName="control3">
+                <option *ngFor="let dsu of dsus" value="{{dsu.id}}">{{dsu.name}}</option>
+              </select>
+            </label>
+            <div class="form-error" *ngIf="form.invalid && (form.controls.control3.touched || form.controls.control3.dirty )">
+              <div *ngIf="form.controls.control3.errors?.required">
+                Required Field
+              </div>
+            </div>
+          </div>
+          <div *ngSwitchDefault>
+            <div class="form-control">
+              <label>{{label3}}
+                <br>
+                <input type="number" class="form-control" formControlName="control3" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57">
+              </label>
+              <div class="form-error" *ngIf="form.invalid && (form.controls.control3.touched || form.controls.control3.dirty )">
+                <div *ngIf="form.controls.control3.errors?.min">
+                  Min of 0
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button [disabled]="form.invalid" (click)="submitForm(form)">Submit</button>
+        <div *ngIf="submitted" class="form-success">Success</div>
+      </div>
+    </form>
+  </fieldset>
+</div>
+<div class="form-bottom-buttons-wrapper">
+  <div class="form-bottom-buttons">
+    <button (click)="addForm()">Add Another Form</button>
+    <br>
+    <br>
+    <br>
+    <br>
+    <button *ngIf="containsAdditionalForms()" (click)="resetForms()">Reset</button>
+  </div>
+</div>
