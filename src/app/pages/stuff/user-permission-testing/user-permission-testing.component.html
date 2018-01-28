@@ -1,0 +1,7 @@
+Users:<br>
+
+<ul>
+	<li *ngFor="let user of users">
+	<a routerLink="/pages/stuff/user-permission-testing/user/{{user.id}}">{{user.name}}</a>
+</li>
+</ul>

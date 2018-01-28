@@ -56,7 +56,9 @@ export class BComponent implements OnInit {
       .subscribe(res => console.log(res));
 
     let analsexpenis$ = Observable.fromEvent(this.penis.nativeElement, 'keyup')
-      .subscribe(res => console.log(res.target.value))
+      .subscribe( res => console.log(
+        //res.target.value
+        ) )
 
 
     const source = Observable.from([1, 2, 3, 4, 5]);

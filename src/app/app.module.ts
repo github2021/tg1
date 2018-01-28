@@ -42,8 +42,9 @@ import { Styling1CComponent } from './pages/tests/styling1/pages/styling1-c/styl
 
 import { 
     MatSidenavModule,
+    MatTabsModule,
     MatButtonModule,
-    MatIconModule, 
+    MatIconModule,
 } from '@angular/material';
 import { Styling1DComponent } from './pages/tests/styling1/pages/styling1-d/styling1-d.component';
 import { Test1Component } from './tests/jasmine/test1/test1.component';
@@ -52,6 +53,9 @@ import { HelloComponent } from './tests/jasmine/test1/hello.component';
 import { AComponent } from './pages/stuff/a/a.component';
 import { BComponent } from './pages/stuff/b/b.component';
 import { HtmlDomComponent } from './tests/js/html-dom/html-dom.component';
+import { UserPermissionTestingComponent } from './pages/stuff/user-permission-testing/user-permission-testing.component';
+import { UserPermissionTestingUserComponent } from './pages/stuff/user-permission-testing-user/user-permission-testing-user.component';
+import { Api2Service } from './pages/stuff/user-permission-testing-shared/api2.service';
 
 
 
@@ -78,7 +82,9 @@ import { HtmlDomComponent } from './tests/js/html-dom/html-dom.component';
     HelloComponent,
     AComponent,
     BComponent,
-    HtmlDomComponent
+    HtmlDomComponent,
+    UserPermissionTestingComponent,
+    UserPermissionTestingUserComponent,
   ],
   imports: [
     BrowserModule,
@@ -93,6 +99,7 @@ import { HtmlDomComponent } from './tests/js/html-dom/html-dom.component';
     AngularFireAuthModule,
     AngularFireDatabaseModule,
     MatSidenavModule,
+    MatTabsModule,
     MatButtonModule,
     MatIconModule,
   ],
@@ -101,6 +108,7 @@ import { HtmlDomComponent } from './tests/js/html-dom/html-dom.component';
     AppService,
     ApiService,
     CanDeactivateGuard,
+    Api2Service,
   ],
   bootstrap: [AppComponent]
 })

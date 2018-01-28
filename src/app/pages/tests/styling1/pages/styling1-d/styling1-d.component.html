@@ -10,7 +10,6 @@
 <div style="border: 2px solid red; padding: 1rem;">
   <router-outlet></router-outlet>
 </div>
-
  -->
 <mat-sidenav-container style="flex:1">
   <mat-sidenav #sidenav class="docs-component-viewer-sidenav" [opened]="!isScreenSmall()" [mode]="isScreenSmall() ? 'over' : 'side'" [fixedInViewport]="isScreenSmall()" fixedTopGap="92">
@@ -39,20 +38,13 @@
   </mat-sidenav>
   <div class="docs-component-sidenav-content">
     <!-- <component-page-header (toggleSidenav)="sidenav.toggle()"></component-page-header> -->
-
-
-
 <div class="docs-primary-header component-page-header">
   <!-- <button mat-button class="sidenav-toggle" (click)="toggleSidenav.emit()"> -->
   <button mat-button class="sidenav-toggle" (click)="sidenav.toggle()">
     <mat-icon>menu</mat-icon>
   </button>
-
 <!--   <h1 focusOnNavigation>{{getTitle()}} </h1>
  --></div>
-
-
-
 
 <!--     <button (click)="sidenav.toggle()">analsex</button>
  -->    <router-outlet></router-outlet>

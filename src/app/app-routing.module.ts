@@ -9,6 +9,8 @@ import { ProtractorTest1Component } from './tests/protractor/test1/test1.compone
 import { HomeComponent } from './pages/home/home.component';
 import { AComponent } from './pages/stuff/a/a.component';
 import { BComponent } from './pages/stuff/b/b.component';
+import { UserPermissionTestingComponent } from './pages/stuff/user-permission-testing/user-permission-testing.component';
+import { UserPermissionTestingUserComponent } from './pages/stuff/user-permission-testing-user/user-permission-testing-user.component';
 import { AddDsuComponent } from './pages/tests/formtest1/pages/add-dsu/add-dsu.component';
 import { AddSiteComponent } from './pages/tests/formtest1/pages/add-site/add-site.component';
 import { Styling1Component } from './pages/tests/styling1/pages/styling1/styling1.component';
@@ -48,7 +50,20 @@ export const routes: Routes = [
     ]
   },
   { path: 'pages/stuff/a', component: AComponent, data: { pageTitle: "StuffA" } },
-  { path: 'pages/stuff/b', component: BComponent, data: { pageTitle: "StuffB" } },
+  {
+    path: 'pages/stuff/b',
+    component: BComponent,
+    data: { pageTitle: "StuffB" },
+    children: [
+      { path: '', redirectTo: 'child-one', pathMatch: 'full' },
+      { path: 'child-one', component: Styling1BComponent, data: { id: 1 } },
+      { path: 'child-two', component: Styling1BComponent, data: { id: 2 } },
+      { path: 'child-three', component: Styling1BComponent, data: { id: 3 } },
+    ]
+  },
+  { path: 'pages/stuff/user-permission-testing', component: UserPermissionTestingComponent, data: { pageTitle: "StuffUPT" } },
+  { path: 'pages/stuff/user-permission-testing/user/:id', component: UserPermissionTestingUserComponent, data: { pageTitle: "StuffUPT2" } },
+
 
   { path: '*', redirectTo: '' }
 ];
