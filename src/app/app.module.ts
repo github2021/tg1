@@ -56,6 +56,7 @@ import { HtmlDomComponent } from './tests/js/html-dom/html-dom.component';
 import { UserPermissionTestingComponent } from './pages/stuff/user-permission-testing/user-permission-testing.component';
 import { UserPermissionTestingUserComponent } from './pages/stuff/user-permission-testing-user/user-permission-testing-user.component';
 import { Api2Service } from './pages/stuff/user-permission-testing-shared/api2.service';
+import {DragulaModule} from 'ng2-dragula';
 
 
 
@@ -102,6 +103,7 @@ import { Api2Service } from './pages/stuff/user-permission-testing-shared/api2.s
     MatTabsModule,
     MatButtonModule,
     MatIconModule,
+    DragulaModule
   ],
   providers: [
     // Constants
