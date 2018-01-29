@@ -35,8 +35,9 @@ export class UserPermissionTestingUserComponent implements OnInit {
     }, 2000);
   }
 
-  public many: Array < string > = ['The', 'possibilities', 'are', 'endless!'];
-  public many2: Array < string > = ['Explore', 'them'];
+  many = ['The', 'possibilities', 'are', 'endless!'];
+  many2 = ['Explore', 'them'];
+  many3 = ['analsex'];
 
 
   private onDropModel(args: any): void {
@@ -54,19 +55,10 @@ export class UserPermissionTestingUserComponent implements OnInit {
     console.log(source);
   }
 
-
-  groups: Array < any > = [{
-      name: 'Group A',
-      items: [{ name: 'Item A' }, { name: 'Item B' }, { name: 'Item C' }, { name: 'Item D' }]
-    },
-    {
-      name: 'Group B',
-      items: [{ name: 'Item 1' }, { name: 'Item 2' }, { name: 'Item 3' }, { name: 'Item 4' }]
-    }
+  groups = [
+    { name: 'Group A', items: [{ name: 'Item A' }, { name: 'Item B' }, { name: 'Item C' }, { name: 'Item D' }] },
+    { name: 'Group B', items: [{ name: 'Item 1' }, { name: 'Item 2' }, { name: 'Item 3' }, { name: 'Item 4' }] }
   ];
-
-
-
 
   constructor(
     private dragulaService: DragulaService,
@@ -76,30 +68,30 @@ export class UserPermissionTestingUserComponent implements OnInit {
     this.userId = _activatedRoute.snapshot.params.id
 
 
-    dragulaService.drag.subscribe((value) => { this.onDrag(value.slice(1)); });
-    dragulaService.drop.subscribe((value) => { this.onDrop(value.slice(1)); });
-    dragulaService.over.subscribe((value) => { this.onOver(value.slice(1)); });
-    dragulaService.out.subscribe((value) => { this.onOut(value.slice(1)); });
+    dragulaService.drag.subscribe((value) => { console.log("drag "+value);this.onDrag(value.slice(1)); });
+    dragulaService.drop.subscribe((value) => { console.log("drop "+value[0] );this.onDrop(value.slice(1)); });
+    dragulaService.over.subscribe((value) => { console.log("over "+value[1] );this.onOver(value.slice(1)); });
+    dragulaService.out.subscribe((value) => { console.log("out "+value[2] );this.onOut(value.slice(1)); });
 
 
 
-      dragulaService.setOptions('bag3', { removeOnSpill: true });
-      dragulaService.setOptions('bag4', { revertOnSpill: true });
-      dragulaService.setOptions('bag5', { copy: true });
-      dragulaService.setOptions('bag6', {
-        moves: function(el: any, container: any, handle: any): any {
-          console.log(el, container);
-          return handle.className === 'handle';
-        }
-      });
+    // dragulaService.setOptions('bag3', { removeOnSpill: true });
+    // dragulaService.setOptions('bag4', { revertOnSpill: true });
+    // dragulaService.setOptions('bag5', { copy: true });
+    // dragulaService.setOptions('bag6', {
+    //   moves: function(el: any, container: any, handle: any): any {
+    //     console.log(el, container);
+    //     return handle.className === 'handle';
+    //   }
+    // });
 
-    dragulaService.dropModel.subscribe((value: any) => {
-      this.onDropModel(value.slice(1));
-    });
-    dragulaService.removeModel.subscribe((value: any) => {
-      this.onRemoveModel(value.slice(1));
-    });
-    console.log(dragulaService);
+    // dragulaService.dropModel.subscribe((value: any) => {
+    //   this.onDropModel(value.slice(1));
+    // });
+    // dragulaService.removeModel.subscribe((value: any) => {
+    //   this.onRemoveModel(value.slice(1));
+    // });
+    // console.log(dragulaService);
   }
 
 
@@ -117,16 +109,17 @@ export class UserPermissionTestingUserComponent implements OnInit {
 
 
 
-  ngOnDestroy(){
-    this.dragulaService.destroy('bag1');
-    this.dragulaService.destroy('bag2');
-    this.dragulaService.destroy('bag3');
-    this.dragulaService.destroy('bag4');
-    this.dragulaService.destroy('bag5');
-    this.dragulaService.destroy('bag6');
-    this.dragulaService.destroy('bag7');
-    this.dragulaService.destroy('bag8');
-    this.dragulaService.destroy('bag9');
+  ngOnDestroy() {
+    // this.dragulaService.destroy('bag1');
+    // this.dragulaService.destroy('bag2');
+    // this.dragulaService.destroy('bag3');
+    // this.dragulaService.destroy('bag4');
+    // this.dragulaService.destroy('bag5');
+    // this.dragulaService.destroy('bag6');
+    // this.dragulaService.destroy('bag7');
+    // this.dragulaService.destroy('bag8');
+    // this.dragulaService.destroy('bag9');
+     this.dragulaService.destroy('bag10');
   }
 
 
